@@ -12,9 +12,9 @@ $tot += $bed1->getPrice() * $bed1->getQuantity();
 if ($user1->getDiscount()) {
     $discountedPrice = $tot - ($tot * (20 / 100));
     
-    var_dump("Prezzo totale: " . $discountedPrice . " EUR");
+    var_dump("Prezzo totale: " . round($discountedPrice, 2) . " EUR");
 } else {
-    var_dump("Prezzo totale: " . $tot . " EUR");
+    var_dump("Prezzo totale: " . round($tot, 2) . " EUR");
 }
 
 
