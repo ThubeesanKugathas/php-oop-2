@@ -58,11 +58,15 @@ class User extends CreditCard {
     public function setDiscount($registered)
     {
         if($registered) {
-            
+
             $this->discount = true;
+
+            return $this;
         } 
 
-        return false;
+        $this->discount = false;
+
+        return $this;
 
     }
 

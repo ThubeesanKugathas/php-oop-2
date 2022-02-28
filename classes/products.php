@@ -5,6 +5,7 @@ class Products {
     protected float $price;
     protected string $title;
     protected string $description;
+    protected int $quantity;
 
 
     /**
@@ -21,10 +22,14 @@ class Products {
      * @return  self
      */ 
     public function setPrice($price)
-    {
-        $this->price = $price;
+    {   
 
-        return $this;
+        if (is_float($price)) {
+
+            $this->price = $price ;
+    
+            return $this;
+        }
     }
 
     /**
@@ -65,6 +70,29 @@ class Products {
         $this->title = $title;
 
         return $this;
+    }
+
+    /**
+     * Get the value of quantity
+     */ 
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Set the value of quantity
+     *
+     * @return  self
+     */ 
+    public function setQuantity($quantity)
+    {   
+
+        if (is_int($quantity)) {
+            $this->quantity = $quantity;
+    
+            return $this;
+        }
     }
 }
 

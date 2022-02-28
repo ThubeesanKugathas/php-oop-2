@@ -5,8 +5,17 @@ class Food extends Products {
 
     protected string $type;
     protected string $brand;
-    protected string $weight;
-    protected int $quantity;
+    protected int $weight;
+
+    function __construct(array $foodProductDetails) {
+        $this->setTitle($foodProductDetails["productName"]);
+        $this->setPrice($foodProductDetails["productPrice"]);
+        $this->setDescription($foodProductDetails["productDescription"]);
+        $this->setQuantity($foodProductDetails["productQuantity"]);
+        $this->setType($foodProductDetails["foodType"]);
+        $this->setBrand($foodProductDetails["foodBrand"]);
+        $this->setWeight($foodProductDetails["foodWeight"]);
+    }
 
     /**
      * Get the value of type
@@ -48,24 +57,27 @@ class Food extends Products {
         return $this;
     }
 
+
     /**
-     * Get the value of quantity
+     * Get the value of weight
      */ 
-    public function getQuantity()
+    public function getWeight()
     {
-        return $this->quantity;
+        return $this->weight;
     }
 
     /**
-     * Set the value of quantity
+     * Set the value of weight
      *
      * @return  self
      */ 
-    public function setQuantity($quantity)
-    {
-        $this->quantity = $quantity;
-
-        return $this;
+    public function setWeight($weight)
+    {   
+        if (is_int($weight)) {
+            $this->weight = $weight;
+    
+            return $this;
+        }
     }
 }
 
