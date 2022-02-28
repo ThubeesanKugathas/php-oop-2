@@ -9,7 +9,14 @@ $tot += $food2->getPrice() * $food2->getQuantity();
 $tot += $toy1->getPrice() * $toy1->getQuantity();
 $tot += $bed1->getPrice() * $bed1->getQuantity();
 
-var_dump("Prezzo totale: " . $tot . " EUR");
+if ($user1->getDiscount()) {
+    $discountedPrice = $tot - ($tot * (20 / 100));
+    
+    var_dump("Prezzo totale: " . $discountedPrice . " EUR");
+} else {
+    var_dump("Prezzo totale: " . $tot . " EUR");
+}
+
 
 
 ?>
