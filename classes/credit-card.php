@@ -42,6 +42,16 @@ class CreditCard {
      */ 
     public function setExpiringDate($expiringDate)
     {
+        $today = date('Y-m-d');
+        $expire = date_create($expiringDate);
+
+        if(date_format($expire, "Y-m-d") < $today) {
+
+            $this->expiringDate = "CARTA NON VALIDA - SCADUTA";
+
+            return $this; 
+        }
+
         $this->expiringDate = $expiringDate;
 
         return $this;
