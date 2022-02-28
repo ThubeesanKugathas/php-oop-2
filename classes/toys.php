@@ -5,9 +5,15 @@ class Toys extends Products {
     
     protected string $gameType;
     protected string $material;
-    protected int $quantity;
 
-
+    function __construct(array $toysDetails) {
+        $this->setTitle($toysDetails["productName"]);
+        $this->setPrice($toysDetails["productPrice"]);
+        $this->setDescription($toysDetails["productDescription"]);
+        $this->setQuantity($toysDetails["productQuantity"]);
+        $this->setGameType($toysDetails["gameType"]);
+        $this->setMaterial($toysDetails["gameMaterial"]);
+    }
 
     /**
      * Get the value of gameType
