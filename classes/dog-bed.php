@@ -3,9 +3,20 @@ require_once __DIR__ . "/products.php";
 
 class DogBed extends Products {
 
-    protected int $size;
+    protected string $size;
     protected string $color;
     protected string $bedMaterial;
+
+    function __construct(array $bedDetails) {
+        $this->setTitle($bedDetails["productName"]);
+        $this->setPrice($bedDetails["productPrice"]);
+        $this->setDescription($bedDetails["productDescription"]);
+        $this->setQuantity($bedDetails["productQuantity"]);
+        $this->setSize($bedDetails["bedSize"]);
+        $this->setColor($bedDetails["bedColor"]);
+        $this->setBedMaterial($bedDetails["bedMaterial"]);
+        
+    }
 
 
     

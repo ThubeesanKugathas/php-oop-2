@@ -3,6 +3,7 @@
     require_once __DIR__ . "/classes/toys.php";
     require_once __DIR__ . "/classes/dog-bed.php";
 
+
     $cart1 = [];
 
     $food1 = new Food ([
@@ -34,6 +35,17 @@
         "gameMaterial" => "Materiale 1",
     ]);
 
-    array_push($cart1, $food1, $food2, $toy1);
+    $bed1 = new DogBed ([
+        "productPrice" => 24.99,
+        "productName" => "Cuccia per cani 1",
+        "productDescription" => "Una cuccia molto spaziosa",
+        "productQuantity" => 1,
+        "bedSize" => "100x100cm",
+        "bedColor" => "Colore 1",
+        "bedMaterial" => "Materiale 1",
+    ]);
+
+    array_push($cart1, $food1, $food2, $toy1, $bed1);
     var_dump($cart1);
+
 ?>
