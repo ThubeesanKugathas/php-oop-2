@@ -21,10 +21,18 @@ class CreditCard {
      * @return  self
      */ 
     public function setCardNumber($cardNumber)
-    {
-        $this->cardNumber = $cardNumber;
+    {   
+        if (strlen($cardNumber) == 19) {
+
+            $this->cardNumber = $cardNumber;
+            
+            return $this;
+        } 
+
+        $this->cardNumber = "CARTA NON ESISTENTE";
 
         return $this;
+
     }
 
     /**
@@ -71,10 +79,13 @@ class CreditCard {
      * @return  self
      */ 
     public function setCodeCCV($codeCCV)
-    {
-        $this->codeCCV = $codeCCV;
+    {   
+        if (is_int($codeCCV) && strlen($codeCCV) == 3) {
 
-        return $this;
+            $this->codeCCV = $codeCCV;
+
+            return $this;
+        }
     }
 }
 
